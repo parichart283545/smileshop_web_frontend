@@ -19,6 +19,7 @@ import Product from "./modules/_Product/pages/Product";
 import ProductAddEdit from "./modules/_Product/pages/ProductAddEdit";
 import ProductGroup from "./modules/_ProductGroup/pages/ProductGroup";
 import ProductGroupAddEdit from "./modules/_ProductGroup/pages/ProductGroupAddEdit";
+import Stock from "./modules/_Stock/pages/stockUpdate";
 
 export default function BasePage(props) {
   // useEffect(() => {
@@ -48,6 +49,7 @@ export default function BasePage(props) {
         <ContentRoute exact path="/productGroup" component={ProductGroup} />
         <ContentRoute exact path="/productGroups/new" component={ProductGroupAddEdit} />
         <ContentRoute exact path="/productGroups/edit/:id" component={ProductGroupAddEdit} />
+        <ContentRoute exact path="/stock" component={Stock} />
         <PrivateRoute exact path="/test" roles={[ROLES.admin,ROLES.developer]} component={Test} />
         {/* End Demo part สามารถ comment ได้ */}
 

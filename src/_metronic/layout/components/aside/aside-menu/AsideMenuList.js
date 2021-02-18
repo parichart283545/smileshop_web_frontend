@@ -10,6 +10,9 @@ import { ROLES } from "../../../../../Constants";
 import Hoc from "../../../../../app/modules/Common/components/Hoc";
 import DvrIcon from "@material-ui/icons/Dvr";
 import Icon from "@material-ui/core/Icon";
+import FastfoodIcon from '@material-ui/icons/Fastfood';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import StoreIcon from '@material-ui/icons/Store';
 
 export function AsideMenuList({ layoutProps }) {
   const location = useLocation();
@@ -38,7 +41,7 @@ export function AsideMenuList({ layoutProps }) {
       <ul className={`menu-nav ${layoutProps.ulClasses}`}>
         {/* begin::section */}
         <li className="menu-section ">
-            <h4 className="menu-text">Ying Coffee</h4>
+            <h4 className="menu-text">Manage shop</h4>
             <i className="menu-icon flaticon-more-v2"></i>
           </li>
         {/*begin::1 Product*/}
@@ -47,38 +50,52 @@ export function AsideMenuList({ layoutProps }) {
             aria-haspopup="true"
           >
             <NavLink className="menu-link" to="/product/">
-              <span className="svg-icon menu-icon">
-                <Icon>supervisor_account</Icon>
+            <span className="svg-icon menu-icon">
+              <FastfoodIcon></FastfoodIcon>
               </span>
-              <span className="menu-text">All Menu</span>
+              <span className="menu-text">Products</span>
             </NavLink>
           </li>
         {/*End::1 Product List*/}
         
-        {/*begin::1 ProductGroup*/}
+        {/*begin::2 ProductGroup*/}
         <li
             className={`menu-item ${getMenuItemActive("/productGroup", false)}`}
             aria-haspopup="true"
           >
             <NavLink className="menu-link" to="/productGroup">
               <span className="svg-icon menu-icon">
-                <Icon>supervisor_account</Icon>
+                <GroupWorkIcon></GroupWorkIcon>
               </span>
-              <span className="menu-text">Menu Type</span>
+              <span className="menu-text">Product Groups</span>
             </NavLink>
           </li>
-          {/*End::1 ProductGroup*/}
+        {/*End::2 ProductGroup*/}
+
+        {/*begin::3 Edit Stock*/}
+        <li
+            className={`menu-item ${getMenuItemActive("/stock", false)}`}
+            aria-haspopup="true"
+          >
+            <NavLink className="menu-link" to="/stock">
+              <span className="svg-icon menu-icon">
+                <StoreIcon></StoreIcon>
+              </span>
+              <span className="menu-text">Edit Stock</span>
+            </NavLink>
+          </li>
+          {/*End::3 Stock*/}
           {/* end:: section */}
         {/* begin::section */}
-        <li className="menu-section ">
+        {/* <li className="menu-section ">
             <h4 className="menu-text">Employee</h4>
             <i className="menu-icon flaticon-more-v2"></i>
-          </li>
+          </li> */}
 
           {/* end:: section */}
 
           {/*begin::1 newEmployee*/}
-          <li
+          {/* <li
             className={`menu-item ${getMenuItemActive("/employee/new", false)}`}
             aria-haspopup="true"
           >
@@ -88,11 +105,11 @@ export function AsideMenuList({ layoutProps }) {
               </span>
               <span className="menu-text">New Employee</span>
             </NavLink>
-          </li>
+          </li> */}
           {/*End::1 newEmployee*/}
 
           {/*begin::1 Employee List*/}
-          <li
+          {/* <li
             className={`menu-item ${getMenuItemActive("/employee/", false)}`}
             aria-haspopup="true"
           >
@@ -102,7 +119,7 @@ export function AsideMenuList({ layoutProps }) {
               </span>
               <span className="menu-text">Employee</span>
             </NavLink>
-          </li>
+          </li> */}
           {/*End::1 Employee List*/}
       </ul>
       {/* end::Menu Nav */}
